@@ -1,86 +1,88 @@
+import Dashboard from "../Dashboard/Dashboard";
+
 const Main = () => {
     return (
         <main id="site-content">
-            <section class="basic">
+            <section className="basic">
                 <h1> Welcome to pet my pet!</h1>
             </section>
-            <section class="login">
+            <section className="login">
                 <form action="#" method="post">
                     <fieldset>
                         <legend>Login</legend>
-                        <p class="field">
+                        <p className="field">
                             <label for="username">Username</label>
-                            <span class="input">
+                            <span className="input">
                                 <input type="text" name="username" id="username" placeholder="Username" />
-                                <span class="actions"></span>
-                                <i class="fas fa-user"></i>
+                                <span className="actions"></span>
+                                <i className="fas fa-user"></i>
                             </span>
                         </p>
-                        <p class="field">
+                        <p className="field">
                             <label for="password">Password</label>
-                            <span class="input">
+                            <span className="input">
                                 <input type="password" name="password" id="password" placeholder="Password" />
-                                <span class="actions"></span>
-                                <i class="fas fa-key"></i>
+                                <span className="actions"></span>
+                                <i className="fas fa-key"></i>
                             </span>
                         </p>
-                        <input class="button" type="submit" class="submit" value="Login" />
+                        <input className="button" type="submit" className="submit" value="Login" />
                     </fieldset>
                 </form>
             </section>
-            <section class="register">
+            <section className="register">
                 <form action="#" method="post">
                     <fieldset>
                         <legend>Register</legend>
-                        <p class="field">
+                        <p className="field">
                             <label for="username">Username</label>
-                            <span class="input">
+                            <span className="input">
                                 <input type="text" name="username" id="username" placeholder="Username" />
-                                <span class="actions"></span>
-                                <i class="fas fa-user"></i>
+                                <span className="actions"></span>
+                                <i className="fas fa-user"></i>
                             </span>
                         </p>
-                        <p class="field">
+                        <p className="field">
                             <label for="password">Password</label>
-                            <span class="input">
+                            <span className="input">
                                 <input type="password" name="password" id="password" placeholder="Password" />
-                                <span class="actions"></span>
-                                <i class="fas fa-key"></i>
+                                <span className="actions"></span>
+                                <i className="fas fa-key"></i>
                             </span>
                         </p>
-                        <input class="button" type="submit" class="submit" value="Register" />
+                        <input className="button" type="submit" className="submit" value="Register" />
                     </fieldset>
                 </form>
             </section>
-            <section class="create">
+            <section className="create">
                 <form action="#" method="post">
                     <fieldset>
                         <legend>Add new Pet</legend>
-                        <p class="field">
+                        <p className="field">
                             <label for="name">Name</label>
-                            <span class="input">
+                            <span className="input">
                                 <input type="text" name="name" id="name" placeholder="Name" />
-                                <span class="actions"></span>
+                                <span className="actions"></span>
                             </span>
                         </p>
-                        <p class="field">
+                        <p className="field">
                             <label for="description">Description</label>
-                            <span class="input">
+                            <span className="input">
                                 <textarea rows="4" cols="45" type="text" name="description" id="description"
                                     placeholder="Description"></textarea>
-                                <span class="actions"></span>
+                                <span className="actions"></span>
                             </span>
                         </p>
-                        <p class="field">
+                        <p className="field">
                             <label for="image">Image</label>
-                            <span class="input">
+                            <span className="input">
                                 <input type="text" name="imageURL" id="image" placeholder="Image" />
-                                <span class="actions"></span>
+                                <span className="actions"></span>
                             </span>
                         </p>
-                        <p class="field">
+                        <p className="field">
                             <label for="category">Category</label>
-                            <span class="input">
+                            <span className="input">
                                 <select type="text" name="category">
                                     <option>Cat</option>
                                     <option>Dog</option>
@@ -88,147 +90,96 @@ const Main = () => {
                                     <option>Reptile</option>
                                     <option>Other</option>
                                 </select>
-                                <span class="actions"></span>
+                                <span className="actions"></span>
                             </span>
                         </p>
-                        <input class="button" type="submit" class="submit" value="Add Pet" />
+                        <input className="button" type="submit" className="submit" value="Add Pet" />
                     </fieldset>
                 </form>
             </section>
-            <section class="myPet">
+            <section className="myPet">
                 <h3>Name: Pesho</h3>
                 <p>Category: Cat</p>
-                <p class="img"><img src="http://pngimg.com/uploads/cat/cat_PNG50491.png" /></p>
-                <p class="description">This is my cat Pesho</p>
-                <div class="pet-info">
-                    <a href="#"><button class="button">Edit</button></a>
-                    <a href="#"><button class="button">Delete</button></a>
-                    <i class="fas fa-heart"></i> <span>5</span>
+                <p className="img"><img src="http://pngimg.com/uploads/cat/cat_PNG50491.png" /></p>
+                <p className="description">This is my cat Pesho</p>
+                <div className="pet-info">
+                    <a href="#"><button className="button">Edit</button></a>
+                    <a href="#"><button className="button">Delete</button></a>
+                    <i className="fas fa-heart"></i> <span>5</span>
                 </div>
             </section>
-
-            <section class="otherPet">
+            <section className="otherPet">
                 <h3>Name: Gosho</h3>
                 <p>Category: Cat</p>
-                <p class="img"><img src="https://pics.clipartpng.com/Cat_PNG_Clip_Art-2580.png" /></p>
-                <p class="description">This is not my cat Gosho</p>
-                <div class="pet-info">
-                    <a href="#"><button class="button"><i class="fas fa-heart"></i> Pet</button></a>
-                    <a href="#"><button class="button">Details</button></a>
-                    <i class="fas fa-heart"></i> <span> 2</span>
+                <p className="img"><img src="https://pics.clipartpng.com/Cat_PNG_Clip_Art-2580.png" /></p>
+                <p className="description">This is not my cat Gosho</p>
+                <div className="pet-info">
+                    <a href="#"><button className="button"><i className="fas fa-heart"></i> Pet</button></a>
+                    <a href="#"><button className="button">Details</button></a>
+                    <i className="fas fa-heart"></i> <span> 2</span>
                 </div>
             </section>
-            <section class="deletePet">
+            <section className="deletePet">
                 <h3>Pesho</h3>
-                <p>Pet counter: <i class="fas fa-heart"></i> 5</p>
-                <p class="img"><img src="http://pngimg.com/uploads/cat/cat_PNG50491.png" /></p>
+                <p>Pet counter: <i className="fas fa-heart"></i> 5</p>
+                <p className="img"><img src="http://pngimg.com/uploads/cat/cat_PNG50491.png" /></p>
                 <form action="#" method="POST">
-                    <p class="description">This is my cat Pesho</p>
-                    <button class="button">Delete</button>
+                    <p className="description">This is my cat Pesho</p>
+                    <button className="button">Delete</button>
                 </form>
             </section>
-            <section class="detailsMyPet">
+            <section className="detailsMyPet">
                 <h3>Koko</h3>
-                <p>Pet counter: <i class="fas fa-heart"></i> 6</p>
-                <p class="img"><img
+                <p>Pet counter: <i className="fas fa-heart"></i> 6</p>
+                <p className="img"><img
                     src="https://www.freepngimg.com/thumb/parrot/2-parrot-png-images-download-thumb.png" /></p>
                 <form action="#" method="POST">
                     <textarea type="text" name="description">This is my parrot Koko</textarea>
-                    <button class="button"> Save</button>
+                    <button className="button"> Save</button>
                 </form>
             </section>
-            <section class="detailsOtherPet">
+            <section className="detailsOtherPet">
                 <h3>Spirit</h3>
-                <p>Pet counter: 7 <a href="#"><button class="button"><i class="fas fa-heart"></i>
+                <p>Pet counter: 7 <a href="#"><button className="button"><i className="fas fa-heart"></i>
                         Pet</button></a>
                 </p>
-                <p class="img"><img src="http://pngimg.com/uploads/horse/horse_PNG321.png" /></p>
-                <p class="description">This is my horse Spirit</p>
+                <p className="img"><img src="http://pngimg.com/uploads/horse/horse_PNG321.png" /></p>
+                <p className="description">This is my horse Spirit</p>
             </section>
-            <section class="dashboard">
-                <h1>Dashboard</h1>
-                <nav class="navbar">
-                    <ul>
-                        <li><a href="#">All</a></li>
-                        <li><a href="#">Cats</a></li>
-                        <li><a href="#">Dogs</a></li>
-                        <li><a href="#">Parrots</a></li>
-                        <li><a href="#">Reptiles</a></li>
-                        <li><a href="#">Other</a></li>
-                    </ul>
-                </nav>
-                <ul class="other-pets-list">
-                    <li class="otherPet">
-                        <h3>Name: Gosho</h3>
-                        <p>Category: Cat</p>
-                        <p class="img"><img src="https://pics.clipartpng.com/Cat_PNG_Clip_Art-2580.png" /></p>
-                        <p class="description">This is not my cat Gosho</p>
-                        <div class="pet-info">
-                            <a href="#"><button class="button"><i class="fas fa-heart"></i> Pet</button></a>
-                            <a href="#"><button class="button">Details</button></a>
-                            <i class="fas fa-heart"></i> <span> 2</span>
-                        </div>
-                    </li>
-                    <li class="otherPet">
-                        <h3>Name: Gosho</h3>
-                        <p>Category: Cat</p>
-                        <p class="img"><img src="https://pics.clipartpng.com/Cat_PNG_Clip_Art-2580.png" /></p>
-                        <p class="description">This is not my cat Gosho</p>
-                        <div class="pet-info">
-                            <a href="#"><button class="button"><i class="fas fa-heart"></i> Pet</button></a>
-                            <a href="#"><button class="button">Details</button></a>
-                            <i class="fas fa-heart"></i> <span> 2</span>
-                        </div>
-
-                    </li>
-                    <li class="otherPet">
-                        <h3>Name: Kiro</h3>
-                        <p>Category: Dog</p>
-                        <p class="img"><img src="http://www.stickpng.com/assets/images/580b57fbd9996e24bc43bbde.png" />
-                        </p>
-                        <p class="description">This is my dog Kiro</p>
-                        <div class="pet-info">
-                            <a href="#"><button class="button"><i class="fas fa-heart"></i> Pet</button></a>
-                            <a href="#"><button class="button">Details</button></a>
-                            <i class="fas fa-heart"></i> <span> 4</span>
-                        </div>
-                    </li>
-                </ul>
-            </section>
-            <section class="my-pets">
+            <section className="my-pets">
                 <h1>My Pets</h1>
-                <ul class="my-pets-list">
-                    <section class="myPet">
+                <ul className="my-pets-list">
+                    <section className="myPet">
                         <h3>Name: Pesho</h3>
                         <p>Category: Cat</p>
-                        <p class="img"><img src="http://pngimg.com/uploads/cat/cat_PNG50491.png" /></p>
-                        <p class="description">This is my cat Pesho</p>
-                        <div class="pet-info">
-                            <a href="#"><button class="button">Details</button></a>
-                            <a href="#"><button class="button">Delete</button></a>
-                            <i class="fas fa-heart"></i> <span>5</span>
+                        <p className="img"><img src="http://pngimg.com/uploads/cat/cat_PNG50491.png" /></p>
+                        <p className="description">This is my cat Pesho</p>
+                        <div className="pet-info">
+                            <a href="#"><button className="button">Details</button></a>
+                            <a href="#"><button className="button">Delete</button></a>
+                            <i className="fas fa-heart"></i> <span>5</span>
                         </div>
                     </section>
-                    <section class="myPet">
+                    <section className="myPet">
                         <h3>Name: Pesho</h3>
                         <p>Category: Cat</p>
-                        <p class="img"><img src="http://pngimg.com/uploads/cat/cat_PNG50491.png" /></p>
-                        <p class="description">This is my cat Pesho</p>
-                        <div class="pet-info">
-                            <a href="#"><button class="button">Details</button></a>
-                            <a href="#"><button class="button">Delete</button></a>
-                            <i class="fas fa-heart"></i> <span>5</span>
+                        <p className="img"><img src="http://pngimg.com/uploads/cat/cat_PNG50491.png" /></p>
+                        <p className="description">This is my cat Pesho</p>
+                        <div className="pet-info">
+                            <a href="#"><button className="button">Details</button></a>
+                            <a href="#"><button className="button">Delete</button></a>
+                            <i className="fas fa-heart"></i> <span>5</span>
                         </div>
                     </section>
-                    <section class="myPet">
+                    <section className="myPet">
                         <h3>Name: Pesho</h3>
                         <p>Category: Cat</p>
-                        <p class="img"><img src="http://pngimg.com/uploads/cat/cat_PNG50491.png" /></p>
-                        <p class="description">This is my cat Pesho</p>
-                        <div class="pet-info">
-                            <a href="#"><button class="button">Details</button></a>
-                            <a href="#"><button class="button">Delete</button></a>
-                            <i class="fas fa-heart"></i> <span>5</span>
+                        <p className="img"><img src="http://pngimg.com/uploads/cat/cat_PNG50491.png" /></p>
+                        <p className="description">This is my cat Pesho</p>
+                        <div className="pet-info">
+                            <a href="#"><button className="button">Details</button></a>
+                            <a href="#"><button className="button">Delete</button></a>
+                            <i className="fas fa-heart"></i> <span>5</span>
                         </div>
                     </section>
                 </ul>
