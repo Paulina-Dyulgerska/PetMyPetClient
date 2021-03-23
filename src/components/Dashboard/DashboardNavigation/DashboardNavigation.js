@@ -6,12 +6,12 @@ const DashboardNavigation = ({
     return (
         <nav className="navbar">
             <ul>
-                <li><NavLink activeClassName="nav-link-selected" to="/dashboard/all" exact={true}>All</NavLink></li>
-                <li><NavLink activeClassName="nav-link-selected" to="/dashboard/cats" exact={true}>Cats</NavLink></li>
-                <li><NavLink activeClassName="nav-link-selected" to="/dashboard/dogs" exact={true}>Dogs</NavLink></li>
-                <li><NavLink activeClassName="nav-link-selected" to="/dashboard/parrots" exact={true}>Parrots</NavLink></li>
-                <li><NavLink activeClassName="nav-link-selected" to="/dashboard/reptiles" exact={true}>Reptiles</NavLink></li>
-                <li><NavLink activeClassName="nav-link-selected" to="/dashboard/other" exact={true}>Other</NavLink></li>
+                <li><NavLink activeClassName="nav-link-selected" to="/dashboard/All" exact={true}>All</NavLink></li>
+                <li><NavLink activeClassName="nav-link-selected" to="/dashboard/Cats" exact={true}>Cats</NavLink></li>
+                <li><NavLink activeClassName="nav-link-selected" to="/dashboard/Dogs" exact={true}>Dogs</NavLink></li>
+                <li><NavLink activeClassName="nav-link-selected" to="/dashboard/Parrots" exact={true}>Parrots</NavLink></li>
+                <li><NavLink activeClassName="nav-link-selected" to="/dashboard/Reptiles" exact={true}>Reptiles</NavLink></li>
+                <li><NavLink activeClassName="nav-link-selected" to="/dashboard/Others" exact={true}>Others</NavLink></li>
             </ul>
         </nav>
     )
