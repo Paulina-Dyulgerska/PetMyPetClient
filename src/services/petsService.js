@@ -1,9 +1,23 @@
-export const getAll = (category) => {
-    let url = 'http://localhost:5001/pets';
-    let queryString = (category && (category !== 'All')) ? `?category=${category}` : '';
-    url += queryString;
+const url = 'http://localhost:5001/pets';
 
-    return fetch(url)
+const getAll = (category) => {
+    let queryString = url + ((category && (category !== 'All')) ? `?category=${category}` : '');
+
+    return fetch(queryString)
         .then(res => res.json())
         .catch(err => console.error(err))
 }
+const getOne = (id) => {
+    // let queryString = url + (id ? `?id=${id}` : ''); //taka mi vryshta [{},{}...]
+    //tjy kato json-servera mi e REST, toj trqbwa da spazwa protokola i da moje da vryshta po id
+    //zatowa ne mi e nujno da pravq specialen queryString, a moga direktno da poiskam po id - taka mi 
+    //vryshta samo edin {}!!!!
+    return fetch(`${url}/${id}`)
+        .then(res => res.json())
+        .catch(err => console.error(err))
+}
+
+export {
+    getAll,
+    getOne,
+};

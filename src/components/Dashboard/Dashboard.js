@@ -58,8 +58,10 @@ class Dashboard extends Component {
     componentDidUpdate() {
         console.log("Hi from componentDidUpdate");
 
+        //Ako ne napravq tazi proverka, vigani shte minawam prez requesta dolu, toj pyk shte updateva state-yt,
+        //towa pyk shte vodi do nov update, nov request, nov state, nov update, nov request i t.n. - shte si 
+        //zabiq sama prilojenieto v edin bezkraen cikyl!!!!
         const clickedCategory = this.props.match.params.category;
-
         if (this.state.currentCategory === clickedCategory) {
             return;
         }
@@ -67,8 +69,11 @@ class Dashboard extends Component {
         //iskam vseki pyk pri update na componentata, da mi se pravi request kym servera, za da si vzimam
         //fresh danni za otdelnata categoriq i ako dokato sym gledala All naprimer, e stanal update na Cats, 
         //kogato izbera Cats, da moga da vidq updatenatite Cats, a ne Cats ot predi 10 minuti. Zatowa tozi 
-        //request stoi tuk i pri update, samo ako ima promqna na categoriqta (proverqwam go towa s gorniq if)
+        //request stoi tuk i pri update, samo ako(!!!) ima promqna na categoriqta (proverqwam go towa s gorniq if)
         //samo togawa shte dojda tuk i shte requestna novata categoryq s actualnite zapisi v neq!!!
+        //Ako ne napravq tazi proverka, vigani shte minawam prez requesta dolu, toj pyk shte updateva state-yt,
+        //towa pyk shte vodi do nov update, nov request, nov state, nov update, nov request i t.n. - shte si 
+        //zabiq sama prilojenieto v edin bezkraen cikyl!!!!
         //VAJNO: takiwa zaqwki se pravq tochno v componentDidUpdate(), a ne v componentDidMount() ili render()!!!
         petsService.getAll(clickedCategory)
             .then(res => {
