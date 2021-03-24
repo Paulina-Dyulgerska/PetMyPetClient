@@ -5,12 +5,14 @@ const PetDetails = ({
     match
 }) => {
     const petId = match.params.id;
+    //setvam da e {} pet, setvam go oshte predi da sym fetchnala requesta!!!!!
     let [pet, setPet] = useState({});
 
     useEffect(() => {
         petsService.getOne(petId)
             .then(res => setPet(res))
-    }, [match]);
+    }, [match]); //match da mi se podawa vinagi aktualen tuk, zatowa go slagam, zashtoto zawisi ot nego
+    //kawko shte vzema kato danni!
 
     return (
         <section className="detailsOtherPet">
