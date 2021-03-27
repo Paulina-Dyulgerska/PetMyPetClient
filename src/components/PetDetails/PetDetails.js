@@ -11,8 +11,9 @@ const PetDetails = ({
     useEffect(() => {
         petsService.getOne(petId)
             .then(res => setPet(res))
-    }, [match]); //match da mi se podawa vinagi aktualen tuk, zatowa go slagam, zashtoto zawisi ot nego
-    //kawko shte vzema kato danni!
+    }, [match, petId]); //match da mi se podawa vinagi aktualen tuk, zatowa go slagam, zashtoto zawisi ot nego
+    //kawko shte vzema kato danni! petId syshto e dependency i e hubawo i nego da go podam v tozi array ot
+    //dependencyta!!!
 
     return (
         <section className="detailsOtherPet">
@@ -22,7 +23,7 @@ const PetDetails = ({
                     <i className="fas fa-heart"></i>Pet
                 </button>
             </p>
-            <p className="img"><img src={pet.imageURL} /></p>
+            <p className="img"><img src={pet.imageURL} alt=""/></p>
             <p className="description">{pet.description}</p>
         </section>);
 }
