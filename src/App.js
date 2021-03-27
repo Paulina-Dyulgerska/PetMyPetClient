@@ -6,8 +6,10 @@ import Footer from './components/Footer/Footer';
 import Main from './components/Main/Main';
 import Dashboard from './components/Dashboard/Dashboard';
 import PetDetails from './components/PetDetails/PetDetails'
-import DemoForm from './components/DemoForm/DemoForm';
+import DemoFormUncontrolled from './components/DemoForm/DemoFormUncontrolled';
 import DemoFormControlled from './components/DemoForm/DemoFormControlled';
+import DemoFormControlledRef from './components/DemoForm/DemoFormControlledRef';
+import DemoFormControlledFunc from './components/DemoForm/DemoFormControlledFunc';
 
 function App() {
   return (
@@ -20,7 +22,13 @@ function App() {
           <Route path="/dashboard" component={Dashboard}></Route>
           <Route path="/pets/details/:id" component={PetDetails}></Route>
           <Route path="/demo">
-            <DemoForm></DemoForm>
+            <DemoFormControlled></DemoFormControlled>
+            <br />
+            <DemoFormControlledRef></DemoFormControlledRef>
+            <br />
+            <DemoFormControlledFunc></DemoFormControlledFunc>
+            <br />
+            <DemoFormUncontrolled></DemoFormUncontrolled>
           </Route>
         </Switch>
         <Footer></Footer>
