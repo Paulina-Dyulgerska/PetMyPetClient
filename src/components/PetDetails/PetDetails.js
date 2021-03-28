@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
+// import { Link } from 'react-router-dom';
+
 import * as petsService from '../../services/petsService';
+import CustomLink from '../CustomLink/CustomLink';
 
 const PetDetails = ({
     match
@@ -23,8 +26,35 @@ const PetDetails = ({
                     <i className="fas fa-heart"></i>Pet
                 </button>
             </p>
-            <p className="img"><img src={pet.imageURL} alt=""/></p>
+            <p className="img"><img src={pet.imageURL} alt="" /></p>
             <p className="description">{pet.description}</p>
+            <div className="pet-info">
+                {/* <Link to={`/pets/edit/${pet.id}`}>
+                    <button className="button">
+                        <i className="fas fa-heart"></i> Edit
+                    </button>
+                </Link>
+                <Link to={`/pets/delete/${pet.id}`}>
+                    <button className="button">
+                        <i className="fas fa-heart"></i> Delete
+                    </button>
+                </Link> */}
+
+                <CustomLink
+                    tag='button' // tag name
+                    to={`/pets/edit/${pet.id}`} // path
+                    className="button" //className
+                >
+                    <i className="fas fa-heart"></i> Edit
+                </CustomLink>
+                <CustomLink
+                    tag='button' // tag name
+                    to={`/pets/delete/${pet.id}`} // path
+                    className="button" //className
+                >
+                    <i className="fas fa-heart"></i> Delete
+                </CustomLink>
+            </div>
         </section>);
 }
 
