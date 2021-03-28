@@ -18,11 +18,30 @@ const PetDetails = ({
     //kawko shte vzema kato danni! petId syshto e dependency i e hubawo i nego da go podam v tozi array ot
     //dependencyta!!!
 
+    const onPetLikeClickHandler = () => {
+        //zapisvam si novata stojnost za like-ovete:
+        const newLikes = parseInt(pet.likes) + 1;
+
+        //prashtam patch request, za da se zapishe novata stojnost za likes
+        petsService.patch(pet.id, { likes: newLikes })
+        //patch requesta vryshta fetch, t.e. promise, ako e resolvnat tozi promise, prodyljavam nadolu i edva 
+        //pri resolvnat promise, updatevam state-yt na componentata, t.e. sled kato servera na BE-da e updatenal
+        //stojnostta za likes, edwa togawa shte promenq stojnostta na likes, koqto se pokazwa na usera!!!!:
+            .then(() => {
+                // setPet(oldState => ({ ...oldState, likes: parseInt(oldState.likes) + 1 }));
+                //vzimam stariq state i mu slagam nova stojnost za likes!!!!
+                setPet(oldState => ({ ...oldState, likes: newLikes }));
+            })
+            .catch(err => console.error(err));
+    }
+
     return (
         <section className="detailsOtherPet">
             <h3>{pet.name}</h3>
             <p>Pet counter: {pet.likes}
-                <button className="button">
+                {/* by default tozi buttonn nqma da refreshva, zashtoto ne se namira vyv forma, nishto, 
+                     che e type="button"!! Zatowa nqma kakwo da go preventvam!*/}
+                <button className="button" onClick={onPetLikeClickHandler}>
                     <i className="fas fa-heart"></i>Pet
                 </button>
             </p>

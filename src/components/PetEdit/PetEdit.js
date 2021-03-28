@@ -28,10 +28,11 @@ const PetEdit = ({
 
         if (!errorMessage) {
             // petsService.update(pet)
-            petsService.patch(pet)
+            petsService.patch(pet.id, { description: pet.description })
                 .then(res => console.log(res))
                 .then(() => {
-                    history.push(`/pets/details/${pet.id}`);
+                    // history.push(`/pets/details/${pet.id}`);
+                    history.goBack();
                     return null;
                 })
                 .catch(err => console.error(err))
@@ -40,7 +41,7 @@ const PetEdit = ({
 
     const onDescriptionBlurHandler = (e) => {
         const newDescription = e.target.value;
-        
+
         if (newDescription.length < 10) {
             setErrorMessage('The length must be at least 10 symbols.');
         } else {

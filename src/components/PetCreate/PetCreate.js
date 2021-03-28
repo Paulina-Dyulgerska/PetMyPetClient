@@ -13,6 +13,7 @@ const PetCreate = ({
             description: e.target.description.value,
             imageURL: e.target.imageURL.value,
             category: e.target.category.value,
+            likes: 0,
         }
         petService.create(pet)
         .then(res=> console.log(res))

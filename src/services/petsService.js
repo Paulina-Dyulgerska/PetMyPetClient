@@ -38,17 +38,27 @@ const update = (pet) => {
     })
 }
 
-//patch!
-const patch = (pet) => {
-    return fetch(`${url}/${pet.id}`, {
+// //patch!
+// const patch = (pet) => {
+//     return fetch(`${url}/${pet.id}`, {
+//         method: 'PATCH',
+//         headers: {
+//             'Content-type': 'application/json',
+//         },
+//         body: JSON.stringify({ description: pet.description }),
+//     })
+// }
+
+//patch generic one!
+const patch = (petId, data) => {
+    return  fetch(`${url}/${petId}`, {
         method: 'PATCH',
         headers: {
             'Content-type': 'application/json',
         },
-        body: JSON.stringify({ description: pet.description }),
+        body: JSON.stringify(data),
     })
 }
-
 
 export {
     getAll,
