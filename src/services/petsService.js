@@ -27,8 +27,33 @@ const create = (pet) => {
     })
 }
 
+//replace!
+const update = (pet) => {
+    return fetch(`${url}/${pet.id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-type': 'application/json',
+        },
+        body: JSON.stringify(pet),
+    })
+}
+
+//patch!
+const patch = (pet) => {
+    return fetch(`${url}/${pet.id}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-type': 'application/json',
+        },
+        body: JSON.stringify({ description: pet.description }),
+    })
+}
+
+
 export {
     getAll,
     getOne,
     create,
+    patch,
+    update,
 };

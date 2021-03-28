@@ -64,6 +64,7 @@ li {
     position: relative;
     overflow: hidden;
     padding: 0rem;
+    /* object-fit: cover; */
 }
 
 img {
@@ -194,4 +195,10 @@ footer p {
 
 #errorBox>span {
     background: #F50;
+}
+
+.inputError {
+    color: red;
+    font-weight: bold;
+    margin: 0 auto 20px auto;
 }
