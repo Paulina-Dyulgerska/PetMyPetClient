@@ -57,6 +57,7 @@ nav.navbar ul li:hover>a {
     background: rgb(248, 215, 107);
     color: rgb(0, 0, 0);
     font-weight: bold;
+    cursor: pointer;
 }
 
 nav.navbar .nav-link-selected {

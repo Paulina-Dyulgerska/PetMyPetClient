@@ -9,7 +9,7 @@ const Main = () => {
                     <fieldset>
                         <legend>Login</legend>
                         <p className="field">
-                            <label for="username">Username</label>
+                            <label htmlFor="username">Username</label>
                             <span className="input">
                                 <input type="text" name="username" id="username" placeholder="Username" />
                                 <span className="actions"></span>
@@ -17,7 +17,7 @@ const Main = () => {
                             </span>
                         </p>
                         <p className="field">
-                            <label for="password">Password</label>
+                            <label htmlFor="password">Password</label>
                             <span className="input">
                                 <input type="password" name="password" id="password" placeholder="Password" />
                                 <span className="actions"></span>
@@ -33,7 +33,7 @@ const Main = () => {
                     <fieldset>
                         <legend>Register</legend>
                         <p className="field">
-                            <label for="username">Username</label>
+                            <label htmlFor="username">Username</label>
                             <span className="input">
                                 <input type="text" name="username" id="username" placeholder="Username" />
                                 <span className="actions"></span>
@@ -41,7 +41,7 @@ const Main = () => {
                             </span>
                         </p>
                         <p className="field">
-                            <label for="password">Password</label>
+                            <label htmlFor="password">Password</label>
                             <span className="input">
                                 <input type="password" name="password" id="password" placeholder="Password" />
                                 <span className="actions"></span>
@@ -49,49 +49,6 @@ const Main = () => {
                             </span>
                         </p>
                         <input className="button submit" type="submit" value="Register" />
-                    </fieldset>
-                </form>
-            </section>
-            <section className="create">
-                <form action="#" method="post">
-                    <fieldset>
-                        <legend>Add new Pet</legend>
-                        <p className="field">
-                            <label for="name">Name</label>
-                            <span className="input">
-                                <input type="text" name="name" id="name" placeholder="Name" />
-                                <span className="actions"></span>
-                            </span>
-                        </p>
-                        <p className="field">
-                            <label for="description">Description</label>
-                            <span className="input">
-                                <textarea rows="4" cols="45" type="text" name="description" id="description"
-                                    placeholder="Description"></textarea>
-                                <span className="actions"></span>
-                            </span>
-                        </p>
-                        <p className="field">
-                            <label for="image">Image</label>
-                            <span className="input">
-                                <input type="text" name="imageURL" id="image" placeholder="Image" />
-                                <span className="actions"></span>
-                            </span>
-                        </p>
-                        <p className="field">
-                            <label for="category">Category</label>
-                            <span className="input">
-                                <select type="text" name="category">
-                                    <option>Cat</option>
-                                    <option>Dog</option>
-                                    <option>Parrot</option>
-                                    <option>Reptile</option>
-                                    <option>Other</option>
-                                </select>
-                                <span className="actions"></span>
-                            </span>
-                        </p>
-                        <input className="button submit" type="submit" value="Add Pet" />
                     </fieldset>
                 </form>
             </section>
@@ -109,7 +66,8 @@ const Main = () => {
             <section className="otherPet">
                 <h3>Name: Gosho</h3>
                 <p>Category: Cat</p>
-                <p className="img"><img src="https://pics.clipartpng.com/Cat_PNG_Clip_Art-2580.png" alt=""/></p>
+                {/* <p className="img"><img src="https://pics.clipartpng.com/Cat_PNG_Clip_Art-2580.png" alt=""/></p> */}
+                <p className="img"><img src="" alt=""/></p>
                 <p className="description">This is not my cat Gosho</p>
                 <div className="pet-info">
                     <a href="/"><button className="button"><i className="fas fa-heart"></i> Pet</button></a>
@@ -136,7 +94,6 @@ const Main = () => {
                     <button className="button"> Save</button>
                 </form>
             </section>
-
             <section className="my-pets">
                 <h1>My Pets</h1>
                 <ul className="my-pets-list">

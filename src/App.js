@@ -10,6 +10,7 @@ import DemoFormUncontrolled from './components/DemoForm/DemoFormUncontrolled';
 import DemoFormControlled from './components/DemoForm/DemoFormControlled';
 import DemoFormControlledRef from './components/DemoForm/DemoFormControlledRef';
 import DemoFormControlledFunc from './components/DemoForm/DemoFormControlledFunc';
+import PetCreate from './components/PetCreate/PetCreate';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/dashboard/:category" component={Dashboard}></Route>
           <Route path="/dashboard" component={Dashboard}></Route>
           <Route path="/pets/details/:id" component={PetDetails}></Route>
+          <Route path="/pets/create" component={PetCreate}></Route>
           <Route path="/demo">
             <DemoFormControlled></DemoFormControlled>
             <br />

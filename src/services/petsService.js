@@ -17,7 +17,18 @@ const getOne = (id) => {
         .catch(err => console.error(err))
 }
 
+const create = (pet) => {
+    return fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-type': 'application/json',
+        },
+        body: JSON.stringify(pet),
+    })
+}
+
 export {
     getAll,
     getOne,
+    create,
 };

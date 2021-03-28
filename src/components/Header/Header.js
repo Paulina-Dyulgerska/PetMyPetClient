@@ -1,12 +1,33 @@
+// import { Link } from 'react-router-dom';
+
+import CustomLink from '../CustomLink/CustomLink';
+
 const Header = (props) => {
     return (
         <header id="site-header">
             <nav className="navbar">
                 <section className="navbar-dashboard">
                     <div className="first-bar">
-                        <a href="/">Dashboard</a>
+                        {/* <Link to="/dashboard">Dashboard</Link> */}
+                        <CustomLink
+                            tag='a' // tag name
+                            to={props.path || "/dashboard"} // path
+                            className="button" //className
+                        // className={style.listItem} //className
+                        >
+                            {/* {props.children} */}
+                            Dashboard
+                        </CustomLink>
+
                         <a className="button" href="/">My Pets</a>
-                        <a className="button" href="/">Add Pet</a>
+
+                        <CustomLink
+                            tag='a' // tag name
+                            to={props.path || "/pets/create"} // path
+                            className="button" //className
+                        >
+                            Add Pet
+                        </CustomLink>
                     </div>
                     <div className="second-bar">
                         <ul>
