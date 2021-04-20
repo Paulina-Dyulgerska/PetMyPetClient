@@ -12,6 +12,7 @@ import DemoFormControlledRef from './components/DemoForm/DemoFormControlledRef';
 import DemoFormControlledFunc from './components/DemoForm/DemoFormControlledFunc';
 import PetCreate from './components/PetCreate/PetCreate';
 import PetEdit from './components/PetEdit/PetEdit';
+import Portfolio from './components/Portfolio/Portfolio';
 // import PetDelete from './components/PetDelete/PetDelete';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path="/pets/create" component={PetCreate}></Route>
           <Route path="/pets/details/:id" component={PetDetails}></Route>
           <Route path="/pets/edit/:id" component={PetEdit}></Route>
+          <Route path="/portfolio" component={Portfolio}></Route>
           {/* <Route path="/pets/delete/:id" component={PetDelete}></Route> */}
 
           <Route path="/demo">

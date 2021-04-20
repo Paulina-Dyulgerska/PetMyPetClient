@@ -42,11 +42,11 @@ const PetEdit = ({
     const onDescriptionBlurHandler = (e) => {
         const newDescription = e.target.value;
 
-        if (newDescription.length < 10) {
-            setErrorMessage('The length must be at least 10 symbols.');
-        } else {
-            setErrorMessage('');
-        }
+        // if (newDescription.length < 10) {
+        //     setErrorMessage('The length must be at least 10 symbols.');
+        // } else {
+        //     setErrorMessage('');
+        // }
 
         setErrorMessage(stringLengthValidator(newDescription));
     }
