@@ -32,14 +32,38 @@ const Header = (props) => {
                     <div className="second-bar">
                         <ul>
                             <li>Welcome, {props.username}!</li>
-                            <li><a href="/"><i className="fas fa-sign-out-alt"></i> Logout</a></li>
+                            <li>
+                                <CustomLink
+                                    tag='a' // tag name
+                                    to={props.path || "/logout"} // path
+                                    className="button" //className
+                                >
+                                    <i className="fas fa-sign-out-alt"></i> Logout
+                                </CustomLink>
+                            </li>
                         </ul>
                     </div>
                 </section>
                 <section className="navbar-anonymous">
                     <ul>
-                        <li><a href="/"><i className="fas fa-user-plus"></i> Register</a></li>
-                        <li><a href="/"><i className="fas fa-sign-in-alt"></i> Login</a></li>
+                        <li>
+                            <CustomLink
+                                tag='a' // tag name
+                                to={props.path || "/register"} // path
+                                className="button" //className
+                            >
+                                <i className="fas fa-user-plus"></i> Register
+                            </CustomLink>
+                        </li>
+                        <li>
+                            <CustomLink
+                                tag='a' // tag name
+                                to={props.path || "/login"} // path
+                                className="button" //className
+                            >
+                                <i className="fas fa-sign-in-alt"></i> Login
+                            </CustomLink>
+                        </li>
                     </ul>
                 </section>
             </nav>
