@@ -31,7 +31,7 @@ const Header = (props) => {
                     </div>
                     <div className="second-bar">
                         <ul>
-                            <li>Welcome, {props.username}!</li>
+                           {props.userEmail && <li>Welcome, {props.userEmail}!</li> }
                             <li>
                                 <CustomLink
                                     tag='a' // tag name

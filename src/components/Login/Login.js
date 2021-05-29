@@ -1,30 +1,30 @@
-import { useEffect, useState } from "react";
-// import firebase, { auth } from '../../utils/firebase';
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import authentication from '../../utils/firebase';
 import InputError from '../Shared/InputError/InputError';
 
 const Login = () => {
     const [errorMessage, setErrorMessage] = useState();
+    const history = useHistory();
 
-    const onLoginFormSubmitHandler = (e) => {
+    const onLoginFormSubmitHandler = async (e) => {
         e.preventDefault();
 
         const email = e.target.email.value;
         const password = e.target.password.value;
 
-        authentication.login(email, password)
-            .then((userCredential) => {
-                // Signed in
-                var user = userCredential.user;
-                console.log(user.email);
-                console.log(userCredential);
-            })
-            .catch((error) => {
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                setErrorMessage(errorMessage);
-                console.log(errorCode, errorMessage);
-            });
+        try {
+            var userCredential = await authentication.login(email, password);
+            var user = userCredential.user;
+            history.push('/dashboard');
+            // console.log(user.email);
+            // console.log(userCredential);
+        } catch (ex) {
+            var errorCode = ex.code;
+            var errorMessage = ex.message;
+            setErrorMessage(errorMessage);
+            console.log(errorCode, errorMessage);
+        }
     }
 
     return (

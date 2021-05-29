@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useHistory } from 'react-router-dom';
 // import firebase, { auth } from '../../utils/firebase';
 import authentication from '../../utils/firebase';
 import InputError from '../Shared/InputError/InputError';
@@ -6,26 +7,40 @@ import InputError from '../Shared/InputError/InputError';
 const Register = () => {
 
     const [errorMessage, setErrorMessage] = useState();
+    const history = useHistory();
 
-    const onRegisterFormSubmitHandler = (e) => {
+    const onRegisterFormSubmitHandler = async (e) => {
         e.preventDefault();
 
         const email = e.target.email.value;
         const password = e.target.password.value;
         const repeatPassword = e.target.repeatPassword.value;
 
-        authentication.register(email, password, repeatPassword)
-            .then((userCredential) => {
-                // Signed in
-                var user = userCredential.user;
-                console.log(user.email);
-            })
-            .catch((error) => {
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                setErrorMessage(errorMessage);
-                console.log(errorCode, errorMessage);
-            });
+        try {
+            var userCredential = await authentication.register(email, password, repeatPassword);
+            var user = userCredential.user;
+            console.log(user.email);
+            console.log(userCredential);
+            history.push('/dashboard');
+        } catch (ex) {
+            var errorCode = ex.code;
+            var errorMessage = ex.message;
+            setErrorMessage(errorMessage);
+            console.log(errorCode, errorMessage);
+        }
+
+        // authentication.register(email, password, repeatPassword)
+        //     .then((userCredential) => {
+        //         // Signed in
+        //         var user = userCredential.user;
+        //         console.log(user.email);
+        //     })
+        //     .catch((error) => {
+        //         var errorCode = error.code;
+        //         var errorMessage = error.message;
+        //         setErrorMessage(errorMessage);
+        //         console.log(errorCode, errorMessage);
+        //     });
     }
 
 
@@ -35,6 +50,7 @@ const Register = () => {
             <form onSubmit={onRegisterFormSubmitHandler}>
                 <fieldset>
                     <legend>Register</legend>
+                    <InputError>{errorMessage}</InputError>
                     <p className="field">
                         <label htmlFor="email">Email</label>
                         <span className="input">
