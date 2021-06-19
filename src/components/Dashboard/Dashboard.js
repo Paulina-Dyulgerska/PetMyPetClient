@@ -53,6 +53,11 @@ class Dashboard extends Component {
                     pets: res
                 }));
             });
+
+        // //shte gi schupq za da testwam ErrorBoundary -  25% ot renderiraniqta shte throwvat error:
+        // if (Math.random() > 0.75) {
+        //     throw new Error('Something went wrong in Dashbouard component');
+        // }
     }
 
     componentDidUpdate() {
@@ -83,7 +88,7 @@ class Dashboard extends Component {
                 }));
             });
     }
-
+    
     render() {
         console.log("Hi from render")
         console.log(this.state.pets);
@@ -93,7 +98,7 @@ class Dashboard extends Component {
                 <h1>Dashboard</h1>
                 <DashboardNavigation />
                 <ul className="other-pets-list">
-                    {this.state.pets.map((p) => {
+                    {this.state.pets?.map((p) => {
                         return (
                             <PetInfoLi
                                 key={p.id}

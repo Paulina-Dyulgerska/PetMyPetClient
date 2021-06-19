@@ -28,10 +28,50 @@ const Header = (props) => {
                         >
                             Add Pet
                         </CustomLink>
+                        <CustomLink
+                            tag='a' // tag name
+                            to={props.path || "/demo-context"} // path
+                            className="button" //className
+                        // className={style.listItem} //className
+                        >
+                            {/* {props.children} */}
+                            Demo-Context
+                        </CustomLink>
+                        <CustomLink
+                            tag='a' // tag name
+                            to={props.path || "/demo-context-useContext"} // path
+                            className="button" //className
+                        // className={style.listItem} //className
+                        >
+                            {/* {props.children} */}
+                            Demo-Context-useContext
+                        </CustomLink>
+                        <CustomLink
+                            tag='a' // tag name
+                            to={props.path || "/demo-context-reducer"} // path
+                            className="button" //className
+                        // className={style.listItem} //className
+                        >
+                            {/* {props.children} */}
+                            Demo-Context-Reducer
+                        </CustomLink>
+                        <CustomLink
+                            tag='a' // tag name
+                            to={props.path || "/demo"} // path
+                            className="button" //className
+                        // className={style.listItem} //className
+                        >
+                            {/* {props.children} */}
+                            Demo Un/Conterolled Components
+                        </CustomLink>
                     </div>
                     <div className="second-bar">
                         <ul>
-                           {props.userEmail && <li>Welcome, {props.userEmail}!</li> }
+                            {/* {props.userEmail && <li>Welcome, {props.userEmail}!</li> } */}
+                            {props.isAuthenticated
+                                ? (<li>Welcome, {props.userEmail}!</li>)
+                                : <li>Welcome, Guest!</li>
+                            }
                             <li>
                                 <CustomLink
                                     tag='a' // tag name
